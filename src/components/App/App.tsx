@@ -9,9 +9,16 @@ import { useAppDispatch } from "../../store";
 import MoviesList from "../MoviesList";
 import { Toaster } from "react-hot-toast";
 
+/**
+ * Main component to display all application
+ * @returns
+ */
 function App() {
   const dispatch = useAppDispatch();
 
+  /**
+   * The dispatch getMovies() trigger the fetch to get all movies from api
+   */
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);
@@ -20,7 +27,7 @@ function App() {
     <Box sx={{ flexGrow: 1 }}>
       <Toaster />
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{ backgroundColor: "#333333" }}>
           <IconButton
             size="large"
             edge="start"
